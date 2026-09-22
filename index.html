@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manual de montagem e desmontagem de redutor de velocidade com rosca sem fim e coroa.">
+  <title>Manual do Redutor de Velocidade</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --accent2: #1d4ed8;
+      --text: #0f172a;
+      --muted: #64748b;
+      --line: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: var(--text);
+    }
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 36px 20px;
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; }
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 46px); }
+    header p { margin: 0; color: #dbeafe; max-width: 760px; line-height: 1.6; }
+    main { padding: 28px 20px 48px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 22px;
+      align-items: start;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .06);
+      overflow: hidden;
+    }
+    .card-head { padding: 18px 20px; border-bottom: 1px solid var(--line); }
+    .card-head h2 { margin: 0 0 5px; font-size: 20px; }
+    .card-head p { margin: 0; color: var(--muted); font-size: 14px; }
+    .pdf-frame {
+      width: 100%;
+      height: 76vh;
+      min-height: 620px;
+      border: 0;
+      display: block;
+      background: #e2e8f0;
+    }
+    .side { padding: 20px; }
+    .side h3 { margin-top: 0; }
+    .btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: var(--accent);
+      color: #fff;
+      padding: 13px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+    .btn:hover { background: var(--accent2); }
+    .btn.alt {
+      background: #eef2ff;
+      color: #1e3a8a;
+      border: 1px solid #c7d2fe;
+    }
+    .qrbox {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+    #qr {
+      width: 210px;
+      height: 210px;
+      max-width: 100%;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 8px;
+    }
+    .small { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 20px;
+    }
+    @media (max-width: 850px) {
+      .grid { grid-template-columns: 1fr; }
+      .pdf-frame { height: 68vh; min-height: 500px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <span class="tag">Manual técnico</span>
+      <h1>Redutor de Velocidade</h1>
+      <p>Manual de montagem e desmontagem do redutor com sistema de transmissão por rosca sem fim e coroa.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <section class="card">
+        <div class="card-head">
+          <h2>Visualização do manual</h2>
+          <p>Consulte as 21 páginas diretamente no navegador.</p>
+        </div>
+        <object class="pdf-frame" data="manual-redutor.pdf" type="application/pdf">
+          <iframe class="pdf-frame" src="manual-redutor.pdf" title="Manual do Redutor"></iframe>
+        </object>
+      </section>
+
+      <aside class="card side">
+        <h3>Acesso rápido</h3>
+        <p class="small">Abra, consulte ou baixe o manual completo em PDF.</p>
+        <a class="btn" href="manual-redutor.pdf" target="_blank" rel="noopener">Abrir PDF</a>
+        <a class="btn alt" href="manual-redutor.pdf" download>Baixar manual</a>
+
+        <div class="qrbox">
+          <h3>QR Code deste site</h3>
+          <img id="qr" alt="QR Code para acessar este site">
+          <p class="small">
+            Quando este arquivo HTML estiver publicado na internet, o QR Code será gerado automaticamente com o endereço atual da página.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    Manual do Redutor de Velocidade • acesso digital
+  </footer>
+
+  <script>
+    const pageUrl = window.location.href;
+    const qr = document.getElementById("qr");
+    qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" + encodeURIComponent(pageUrl);
+  </script>
+</body>
+</html>
